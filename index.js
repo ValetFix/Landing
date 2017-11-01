@@ -7,6 +7,7 @@ const app = express()
 
 const API_KEY = '1126b2a001aff8c872f9c6b39c52d0fd-us17'
 const LIST_ID = '9c0ad13551'
+const PORT = process.env.PORT || 8000
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
@@ -35,6 +36,6 @@ app.post('/subscribe', (req, res) => {
   });
 });
 
-app.listen(8000, function () {
-  console.log('Example app listening on port 3000!')
+app.listen(PORT, function () {
+  console.log('Example app listening!')
 })
