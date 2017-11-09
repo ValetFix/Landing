@@ -7,16 +7,12 @@ const app = express()
 
 const API_KEY = '1126b2a001aff8c872f9c6b39c52d0fd-us17'
 const LIST_ID = '9c0ad13551'
-const PORT = process.env.PORT || 8000
+const PORT = process.env.PORT || 2000
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static('public'))
 app.use(cors())
-
-app.get('/', function(req, res) {
-  res.render('build/index.html');
-})
 
 app.post('/subscribe', (req, res) => {
   const { mail } = req.body
