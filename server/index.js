@@ -15,7 +15,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(cors())
 
 app.get('/', function(req, res) {
-  res.render('build/index.html');
+  res.render('index.html');
 })
 
 app.post('/subscribe', (req, res) => {
